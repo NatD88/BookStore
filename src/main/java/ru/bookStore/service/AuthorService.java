@@ -1,9 +1,9 @@
-package ru.bookStore.service;
+package ru.bookstore.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.bookStore.entity.Author;
-import ru.bookStore.repository.AuthorRepository;
+import ru.bookstore.entity.Author;
+import ru.bookstore.repository.AuthorRepository;
 
 import java.util.List;
 
@@ -16,4 +16,4 @@ public class AuthorService {
         return authorRepository.findAll();
     }
 
-   }
+}

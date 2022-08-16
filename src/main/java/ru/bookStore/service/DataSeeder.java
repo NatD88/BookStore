@@ -1,13 +1,13 @@
-package ru.bookStore.service;
+package ru.bookstore.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
-import ru.bookStore.entity.Author;
-import ru.bookStore.entity.Book;
-import ru.bookStore.repository.AuthorRepository;
-import ru.bookStore.repository.BookRepository;
+import ru.bookstore.entity.Author;
+import ru.bookstore.entity.Book;
+import ru.bookstore.repository.AuthorRepository;
+import ru.bookstore.repository.BookRepository;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -19,6 +19,7 @@ public class DataSeeder implements ApplicationListener<ContextRefreshedEvent> {
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 

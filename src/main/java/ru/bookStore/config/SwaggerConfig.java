@@ -1,4 +1,4 @@
-package ru.bookStore.config;
+package ru.bookstore.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,12 +1,12 @@
-package ru.bookStore.service;
+package ru.bookstore.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.bookStore.dto.BookDTO;
-import ru.bookStore.entity.Author;
-import ru.bookStore.entity.Book;
-import ru.bookStore.repository.AuthorRepository;
-import ru.bookStore.repository.BookRepository;
+import ru.bookstore.dto.BookDTO;
+import ru.bookstore.entity.Author;
+import ru.bookstore.entity.Book;
+import ru.bookstore.repository.AuthorRepository;
+import ru.bookstore.repository.BookRepository;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -43,10 +43,13 @@ public class BookService {
     public BigDecimal getAllBookPrice(Long authorId) {
         Set<Book> books = getBooksByAuthor(authorId);
         BigDecimal sum = new BigDecimal(0);
-        for(Book book: books) {
+        for (Book book : books) {
             sum = sum.add(book.getPrice());
         }
         return sum;
     }
 
+    public List<Book> execMyQuery() {
+        return bookRepository.myQuery();
+    }
 }

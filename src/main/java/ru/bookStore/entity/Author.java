@@ -1,4 +1,4 @@
-package ru.bookStore.entity;
+package ru.bookstore.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -25,15 +25,22 @@ public class Author {
     @JsonIgnore
     @ManyToMany
     @JoinTable(name = "BOOK_AUTHOR",
-            joinColumns = { @JoinColumn(name = "author_id") },
-            inverseJoinColumns = { @JoinColumn(name = "book_id") })
+            joinColumns = {@JoinColumn(name = "author_id")},
+            inverseJoinColumns = {@JoinColumn(name = "book_id")})
 
     private Set<Book> books;
 
-    public Author(String authorName){
+    public Author(String authorName) {
         this.authorName = authorName;
-            }
-    public Set<Book> getBooks(){
+    }
+
+    public Author(String authorName, Set<Book> books) {
+
+        this.authorName = authorName;
+        this.books = books;
+    }
+
+    public Set<Book> getBooks() {
         return books;
     }
 }

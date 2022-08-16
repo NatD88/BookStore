@@ -1,15 +1,15 @@
-package ru.bookStore.controller;
+package ru.bookstore.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.bookStore.dto.BookDTO;
-import ru.bookStore.entity.Author;
-import ru.bookStore.entity.Book;
-import ru.bookStore.service.AuthorService;
-import ru.bookStore.service.BookService;
+import ru.bookstore.dto.BookDTO;
+import ru.bookstore.entity.Author;
+import ru.bookstore.entity.Book;
+import ru.bookstore.service.AuthorService;
+import ru.bookstore.service.BookService;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -45,5 +45,10 @@ public class BookController {
     @GetMapping("/allBookOfAutherPrice")
     public ResponseEntity<BigDecimal> getAllBookPrice(Long authorId) {
         return new ResponseEntity<>(bookService.getAllBookPrice(authorId), HttpStatus.OK);
+    }
+
+    @GetMapping("/allBookQuery")
+    public ResponseEntity<List<Book>> getAllBookByMyQuery() {
+        return new ResponseEntity<>(bookService.execMyQuery(), HttpStatus.OK);
     }
 }

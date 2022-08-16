@@ -1,10 +1,10 @@
-package ru.bookStore.dto;
+package ru.bookstore.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import ru.bookStore.entity.Author;
-import ru.bookStore.entity.Book;
+import ru.bookstore.entity.Author;
+import ru.bookstore.entity.Book;
 
 import java.util.Set;
 

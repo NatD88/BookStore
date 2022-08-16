@@ -1,4 +1,4 @@
-package ru.bookStore.entity;
+package ru.bookstore.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -32,6 +32,12 @@ public class Book {
     public Book(String title, BigDecimal price) {
         this.title = title;
         this.price = price;
+    }
+
+    public Book(String title, BigDecimal price, Set<Author> authors) {
+        this.title = title;
+        this.price = price;
+        this.authors = authors;
     }
 
     public Set<Author> getAuthors() {
